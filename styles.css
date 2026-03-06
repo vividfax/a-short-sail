@@ -20,5 +20,6 @@ canvas {
     top: 50%;
     transform: translate(-50%, -50%);
     font-size: 2rem;
-    color: #1B4DB1;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #E17FD7;
 }

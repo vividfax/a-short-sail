@@ -83,7 +83,7 @@ class Bobber {
         seaCanvas.rotate(this.lean);
         if (this.lit && (frameCount-this.blinkOffset)%this.blinkDuration < this.blinkDuration/2) {
             for (let i = 0; i < 5; i++) {
-                seaCanvas.fill(255, 255, 255, 90-20*i);
+                seaCanvas.fill(255, 255, 242, 90-20*i);
                 seaCanvas.ellipse(0, -this.radius*0.8, this.radius*0.5+i*2.5);
             }
         }
