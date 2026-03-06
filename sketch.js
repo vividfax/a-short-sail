@@ -83,19 +83,23 @@ function createBinocularsFrame() {
     let bobPad = 20;
 
     binocularsMask = createGraphics(134, 76+bobPad);
+    binocularsMask.pixelDensity(1);
 
     binocularsMask.translate(binocularsMask.width/2, binocularsMask.height/2);
-    binocularsMask.ellipse(25, +.25, 76-5);
-    binocularsMask.ellipse(-25, 0+.25, 76-5);
+    // binocularsMask.ellipse(25, +.25, 76-5);
+    // binocularsMask.ellipse(-25, 0+.25, 76-5);
+    binocularsMask.rectMode(CENTER);
+    binocularsMask.rect(0, 0, 132, 74, 0);
 
     binocularsMask = invertMask(binocularsMask);
 
     binocularsCanvas = createGraphics(134, 76+bobPad);
+    binocularsCanvas.pixelDensity(1);
     binocularsCanvas.background(palette.bg);
     binocularsCanvas = binocularsCanvas.get(0, 0, 134, 76);
     binocularsCanvas.mask(binocularsMask);
 
-    binocularsCanvas.filter(BLUR, 2);
+    // binocularsCanvas.filter(BLUR, 2);
 }
 
 function draw() {
@@ -141,7 +145,7 @@ function display() {
     seaCanvas.noFill();
     // seaCanvas.rect(-borderWeight*0.2, -borderWeight*0.2, seaCanvas.width+borderWeight*0.4, seaCanvas.height+borderWeight*0.4, borderWeight);
     seaCanvas.imageMode(CORNER);
-    seaCanvas.image(binocularsCanvas, 0, -10, binocularsCanvas.width/2, binocularsCanvas.height/2+20);
+    seaCanvas.image(binocularsCanvas, 0, -10, binocularsCanvas.width, binocularsCanvas.height+20);
     // seaCanvas.image(binocularsCanvas, 0, sin(frameCount*4)*1.5-10, binocularsCanvas.width/2, binocularsCanvas.height/2+20);
     seaCanvas.strokeWeight(1);
     seaCanvas.noStroke();
