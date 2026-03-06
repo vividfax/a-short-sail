@@ -69,6 +69,8 @@ function setup() {
     palette.pink = color(225, 127, 215, 255);
     palette.cyan = color(32, 225, 192, 255);
     palette.blinker = color(255, 255, 255, 10);
+    palette.sail = color(68, 55, 77, 255);
+    palette.bg = color(33, 27, 36, 255);
 
     player = new Player();
     bird = new Bird();
@@ -89,9 +91,11 @@ function createBinocularsFrame() {
     binocularsMask = invertMask(binocularsMask);
 
     binocularsCanvas = createGraphics(134, 76+bobPad);
-    binocularsCanvas.background(30);
+    binocularsCanvas.background(palette.bg);
     binocularsCanvas = binocularsCanvas.get(0, 0, 134, 76);
     binocularsCanvas.mask(binocularsMask);
+
+    binocularsCanvas.filter(BLUR, 2);
 }
 
 function draw() {
@@ -110,7 +114,7 @@ function update() {
 function display() {
 
     birdCanvas.clear();
-    background(30);
+    background(palette.bg);
 
     for (let i = 0; i < bobbers.length; i++) {
         bobbers[i].update();

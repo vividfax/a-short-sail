@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #111;
+    background-color: rgb(33, 27, 36);
 }
 
 canvas {
@@ -11,4 +11,14 @@ canvas {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+#p5_loading {
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: #1B4DB1;
 }

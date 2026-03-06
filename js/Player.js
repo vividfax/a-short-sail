@@ -109,7 +109,7 @@ class Player {
         seaCanvas.arc(0, 0, this.size, this.size, -bob, PI+bob, CHORD);
         seaCanvas.fill(palette.fullBrown);
         seaCanvas.arc(0, 0, this.size, this.size, PI+bob, TWO_PI-bob, CHORD);
-        seaCanvas.fill(50);
+        seaCanvas.fill(palette.sail);
         let direction = player.velX > 0 ? -1 : 1;
         seaCanvas.triangle(-player.velX, -this.size*1.7, 0, -this.size*0.5, -player.velX+this.size*direction, -this.size-player.velY);
         seaCanvas.stroke(palette.fullBrown);
