@@ -99,7 +99,7 @@ function createBinocularsFrame() {
     binocularsCanvas = binocularsCanvas.get(0, 0, 134, 76);
     binocularsCanvas.mask(binocularsMask);
 
-    // binocularsCanvas.filter(BLUR, 2);
+    binocularsCanvas.filter(BLUR, 1);
 }
 
 function draw() {
